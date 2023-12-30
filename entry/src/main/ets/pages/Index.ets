@@ -1,3 +1,6 @@
+import router from '@ohos.router';
+let msg: string = 'Index页面传来的数据'
+
 @Entry
 @Component
 struct Index {
@@ -9,6 +12,17 @@ struct Index {
         Text(this.message)
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
+        Blank()
+        Button('Next')
+          .onClick(()=> {
+            // 点击事件处理
+            router.pushUrl({
+              url: 'pages/Second',
+              params: {
+                src: msg,
+              }
+            })
+          })
       }
       .width('100%')
     }
