@@ -23,6 +23,15 @@ struct Index {
               }
             })
           })
+        Button($r('app.string.login'))
+          .margin({
+            top: 10
+          })
+          .onClick(() => {
+            router.pushUrl({
+              url: 'pages/LoginPage',
+            })
+          })
       }
       .width('100%')
     }
